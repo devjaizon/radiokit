@@ -58,39 +58,39 @@
 /// <reference no-default-lib="true" />
 
 // @ts-nocheck
-<footer
-    class="w-full flex fixed bottom-0 z-1000 bg-white px-7 justify-between overflow-hidden"
->
-    <div class="flex justify-between text-center h-full align-left ">
-        <button
-            disabled={$station.src == ''}
-            on:click={() => playPause($station, station)}
-            class="text-xl mr-5 p-0 "
-        >
-            <i
-                class={`text-2xl fa ${
-                    !$station.playing ? 'fa-play' : 'fa-pause'
-                }`}
-            />
-        </button>
+<footer class="w-full fixed bottom-0 z-1000 bg-white px-7  overflow-hidden">
+    <div class="mx-auto max-w-6xl flex justify-between overflow-hidden">
+        <div class="flex justify-between text-center h-full align-left ">
+            <button
+                disabled={$station.src == ''}
+                on:click={() => playPause($station, station)}
+                class="text-xl mr-5 p-0 "
+            >
+                <i
+                    class={`text-2xl fa ${
+                        !$station.playing ? 'fa-play' : 'fa-pause'
+                    }`}
+                />
+            </button>
 
-        {#if player}
-            <input
-                class="w-20"
-                min="0"
-                max="1"
-                step="0.1"
-                type="range"
-                bind:value={player.volume}
-            />
-        {:else}
-            <input class="w-20" min="0" max="1" step="0.1" type="range" />
-        {/if}
+            {#if player}
+                <input
+                    class="w-20"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                    type="range"
+                    bind:value={player.volume}
+                />
+            {:else}
+                <input class="w-20" min="0" max="1" step="0.1" type="range" />
+            {/if}
+        </div>
+        <button class="btn px-0" on:click={drawerOpen}>
+            <span class="capitalize text-indigo-400 font-semibold"
+                >{$filter ?? 'todas'}</span
+            >
+            <!-- <i class="fa-solid fa-caret-up opacity-50" /> -->
+        </button>
     </div>
-    <button class="btn px-0" on:click={drawerOpen}>
-        <span class="capitalize text-indigo-400 font-semibold"
-            >{$filter ?? 'todas'}</span
-        >
-        <!-- <i class="fa-solid fa-caret-up opacity-50" /> -->
-    </button>
 </footer>

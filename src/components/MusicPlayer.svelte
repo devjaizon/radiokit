@@ -21,7 +21,7 @@
     class="w-full flex pb-8  sm:pt-0 pr-2 justify-center overflow-hidden h-[100vh]"
 >
     <div class="scroll w-[100vw] overflow-y-scroll overflow-x-hidden pr-3 pl-7">
-        <div class="grid grid-cols-body gap-3 max-w-6xl">
+        <div class="grid grid-cols-body gap-3 mx-auto max-w-6xl">
             {#if filtered}
                 {#each filtered as radio}
                     <Card {radio} />
