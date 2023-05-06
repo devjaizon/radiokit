@@ -2,7 +2,7 @@
     import '../theme.postcss'
     import '@skeletonlabs/skeleton/styles/all.css'
     import '../app.postcss'
-    import { LightSwitch } from '@skeletonlabs/skeleton'
+    // import { LightSwitch } from '@skeletonlabs/skeleton'
     import { filter, genres, station } from '../stores/RadioStore'
     import {
         computePosition,
@@ -64,6 +64,7 @@
         {/each}
     </ListBox>
 </Drawer>
+<!-- <LightSwitch /> -->
 
 <AppShell>
     <svelte:fragment slot="header"><Header /></svelte:fragment>

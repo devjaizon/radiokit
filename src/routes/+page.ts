@@ -39,12 +39,13 @@ export const load: PageLoad = async ({ fetch }) => {
         if (radio.tags) {
             for (const tag of radio.tags) {
                 let count = 0
-
-                allRadios?.forEach((r: Radio) => {
+                // loop through each radio in allRadios and add a count for each time that specific tag apeears in a radio
+                allRadios?.forEach((r) => {
                     if (r.tags?.includes(tag)) {
                         count++
                     }
                 })
+                // if it appears at leas 7 times include it in the list
                 if (count >= 7 && !res.includes(tag)) res.push(tag)
             }
         }
